@@ -8,7 +8,7 @@ const Profile = () => {
 
             <div>
 
-                ava + dicr
+                ava +++ dicr
 
         </div>
 
