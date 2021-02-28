@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
-import Profile from './components/Profile';
-import CrossesZero from './CrosesZero/CrossesZero';
+import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Profile from './components/Profile/Profile';
+// import CrossesZero from './CrosesZero/CrossesZero';
 
 
 function App() {
@@ -12,12 +12,11 @@ function App() {
     // <CrossesZero />
      
     <div className='app-wrapper'>
-      < Header />
+      <Header />
       <Navbar />
       <Profile />
     </div>
   );
-      gjg
 }
 
 export default App;
