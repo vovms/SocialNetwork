@@ -1,8 +1,10 @@
 .header {
     grid-area: h;
-    /* background-color: greenyellow; */
+    background-color: rgb(66, 122, 161);
 }
 
-.header img {
-    width: 100px;
+.header h3 {
+    color: white;
+    padding: 10px;
+    margin: auto;
 }
