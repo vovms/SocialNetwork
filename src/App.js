@@ -13,24 +13,23 @@ import { BrowserRouter, Route } from 'react-router-dom';
 // import CrossesZero from './CrosesZero/CrossesZero';
 
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
         {/* <div> */}
-          <Navbar />
-        
+        <Navbar />
+
         <div className='app-wrapper-content'>
-          {/* <Route path="" component = {Profile}/> */}
-          <Route path="/profile" component={Profile} />
-          <Route path="/dialogs" component={Dialogs} />
           <Route path="/news" component={News} />
           <Route path="/music" component={Music} />
           <Route path="/settings" component={Settings} />
+          <Route path="/dialogs" render={() => <Dialogs DialogsData = {props.TestData.Dialogs} />} />
+          <Route path="/profile" render={() => <Profile postsArr={props.TestData.Profile} addPost = {props.addPost}/>} />
         </div>
-        </div>
-      {/* </div> */}
+      </div>
+
     </BrowserRouter>
   );
 }

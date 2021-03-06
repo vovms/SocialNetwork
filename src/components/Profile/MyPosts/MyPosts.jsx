@@ -1,31 +1,34 @@
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
+import React from 'react';
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        props.addPost(text);
+        // alert(text)    
+    }
+
     return (
 
         <div className={s.PostsBlock}>
             <h3>My posts</h3>
             <div>
                 <div>
-                    <textarea></textarea>
+                    <textarea ref={newPostElement}></textarea>
                 </div>
                 <div>
-                    <button>Add post</button>
+                    <button onClick = {addPost}>Add post</button>
                 </div>
             </div>
             <div className={s.posts}>
-                {postsArr.map(item => <Post message={item.message} />)}
-                {/* <Post message="First post" />
-                <Post message="Second post" /> */}
+                {props.p.map(item => <Post message={item.message} />)}
             </div>
         </div>
     )
 }
-
-let postsArr = [
-    {message : 'First post'},
-    {message : 'Second post'}
-]
 
 export default MyPosts;
