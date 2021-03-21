@@ -1,0 +1,9 @@
+.item{
+    background-color: lightgrey;
+    border-radius: 30px;
+    /* text-align: ; */
+}
+
+.item p{
+    margin-left: 10px;
+}

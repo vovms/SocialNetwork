@@ -2,13 +2,15 @@ import s from './ProfileInfo.module.css';
 
 const ProfileInfo = (props) => {
     return (
-        <div>
-            <div>
-                <img src="https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg"></img>
+        <div className={s.ProfileInfo}>
+            <div className={s.photo}>
+                <img src={props.ProfileInfo.imgSrc}></img>
             </div>
             <div className={s.description}>
-                ava +++ dicr
-    </div>
+                <h2>{props.ProfileInfo.name + " " + props.ProfileInfo.surname}</h2>
+                <h4>{"@" + props.ProfileInfo.pseudo}</h4>
+                <p>{props.ProfileInfo.decription}</p>
+            </div>
         </div>
     )
 }

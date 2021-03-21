@@ -25,8 +25,8 @@ function App(props) {
           <Route path="/news" component={News} />
           <Route path="/music" component={Music} />
           <Route path="/settings" component={Settings} />
-          <Route path="/dialogs" render={() => <Dialogs DialogsData = {props.TestData.Dialogs} />} />
-          <Route path="/profile" render={() => <Profile postsArr={props.TestData.Profile} addPost = {props.addPost}/>} />
+          <Route path="/dialogs" render={() => <Dialogs DialogsData = {props.TestData.Dialogs} dispatch = {props.dispatch}/>} />
+          <Route path="/profile" render={() => <Profile ProfileData={props.TestData.Profile} dispatch = {props.dispatch}/>} />
         </div>
       </div>
 

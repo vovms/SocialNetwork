@@ -2,10 +2,14 @@ import { NavLink } from 'react-router-dom';
 import s from './Dialog.module.css';
 
 const Dialog = (props) => {
-    return(
+    return (
         <div className={s.dialog}>
-           <NavLink to = {"/dialogs/" + props.id}>{props.userName}</NavLink>
-           {/* {props.userName} */}
+            <div>
+                <img className={s.friendImg} src={props.imgSrc}></img>
+            </div>
+            <div className={s.friendNav}>
+                <NavLink className={s.dialogInfo} to={"/dialogs/" + props.id}>{props.userName}</NavLink>
+            </div>
         </div>
     )
 }

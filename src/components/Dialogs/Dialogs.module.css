@@ -2,16 +2,31 @@
 .dialogs{
     display: grid;
     grid-template-columns:  2fr 10fr;
-}
+}   
 
 .dialogsItems{
     padding: 10px;
+    text-decoration: none;
+    background-color: rgb(241, 241, 241);
 }
 
-.dialogsItems .active {
+.dialogsItems a.active {
     color: gold;
+}
+
+.MessagesBlock{
+    display: grid;
+    grid-template-rows: 9fr 1fr;
+    background-color: rgb(241, 241, 241);
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .messagesItems{
     padding: 10px;
+}
+
+.messagesCommandPannel{
+    display: grid;
+    grid-template-columns: 9fr 1fr;
 }
