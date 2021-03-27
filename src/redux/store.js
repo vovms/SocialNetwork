@@ -1,9 +1,6 @@
 import { imgSrc, imgSrcNT, imgSrcTS } from './const';
-
-const ADD_POST = 'ADD-POST';
-const CHANGE_POST_TEXT = 'CHANGE-POST-TEXT';
-const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
-const SEND_MESSAGE = 'SEND-MESSAGE';
+import profileReducer from './profile-reducer';
+import dialogsReducer from './dialogs-reduser';
 
 let store = {
 
@@ -37,7 +34,8 @@ let store = {
             ],
             currUserId: 0,
             currMessageText: 'Type your message ...'
-        }
+        },
+        sidebar: {}
     },
 
     rerenderEntireTree() {
@@ -52,36 +50,13 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let post = { id: 3, likeCounter: 50, message: this._state.Profile.newPostText }
-            this._state.Profile.Messages.push(post);
-            this._state.Profile.newPostText = '';
-            this.rerenderEntireTree(this._state);
-        } else if (action.type === CHANGE_POST_TEXT) {
-            this._state.Profile.newPostText = action.newPostText;
-            this.rerenderEntireTree(this._state);
-        } else if (action.type === UPDATE_MESSAGE_TEXT) {
-            this._state.Dialogs.currMessageText = action.currMessageText;
-            this.rerenderEntireTree(this._state);
-        } else if (action.type === SEND_MESSAGE) {
-            let message = { id: 3, messageText: this._state.Dialogs.currMessageText };
-            this._state.Dialogs.messageData.push(message);
-            this._state.Dialogs.currMessageText = '';
-            this.rerenderEntireTree(this._state);
-        }
+
+        this._state.Profile =  profileReducer(this._state.Profile,action);
+        this._state.Dialogs = dialogsReducer(this._state.Dialogs,action);
+        this.rerenderEntireTree(this._state);
     }
 }
 
 
 export default store;
-
-export const addPostActionCreator = () => ({ type: ADD_POST })
-
-export const changePostTextActionCreator = (text) =>
-    ({ type: CHANGE_POST_TEXT, newPostText: text })
-
-export const UpdateMessageTextActionCreator = (currMessageText) =>
-    ({ type: UPDATE_MESSAGE_TEXT, currMessageText: currMessageText })
-
-export const SendMessageActionCreator = () => ({ type: SEND_MESSAGE })
 
