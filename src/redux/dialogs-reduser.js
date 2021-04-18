@@ -27,9 +27,10 @@ const dialogsReducer = (state = initialState, action) => {
             return newState;
         }
         case SEND_MESSAGE: {
-            let newState = {...state};
+            let newState = {...state,
+                messageData:[...state.messageData]};
             let message = { id: 3, messageText: state.currMessageText };
-            newState.messageData = [...state.messageData];
+            // newState.messageData = [...state.messageData];
             newState.messageData.push(message);
             newState.currMessageText = '';
             return newState;

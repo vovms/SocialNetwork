@@ -8,7 +8,8 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
-import Games from './components/Games/GamesContainer'
+import Games from './components/Games/GamesContainer';
+import Users from './components/Users/UsersContainer';
 
 import { BrowserRouter, Route } from 'react-router-dom';
 // import CrossesZero from './CrosesZero/CrossesZero';
@@ -21,7 +22,6 @@ function App(props) {
         <Header />
         {/* <div> */}
         <Navbar />
-
         <div className='app-wrapper-content'>
           <Route path="/news" component={News} />
           <Route path="/music" component={Music} />
@@ -29,6 +29,7 @@ function App(props) {
           <Route path="/dialogs" render={() => <DialogsContainer/>} />
           <Route path="/profile" render={() => <Profile/>} />
           <Route path="/games" render={() => <Games/>} />
+          <Route path="/users" render={() => <Users/>} />
         </div>
       </div>
 

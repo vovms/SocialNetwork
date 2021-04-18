@@ -1,0 +1,29 @@
+.UserInfo{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+}
+
+.UserInfo img {
+    width: 70px;
+    height:70px;
+    border-radius: 30px;
+}
+
+.follow{
+    background-color: rgb(241,196,15);
+    text-align: center;
+}
+
+.nameAndLocation{
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+}
+
+.location{
+    font-weight: bold;
+}
+
+.shortName{
+    font-weight: bold;
+}
