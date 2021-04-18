@@ -1,0 +1,28 @@
+.gameZone {
+    width: 400px;
+    margin: 20px;
+    /* margin: 20px || 40px || || 30px; */
+    /* margin: <margin-top> || <margin-right> || <margin-bottom> || <margin-left> */
+}
+
+.Grid{ 
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+}
+
+.field {
+    background-color: aqua;
+    margin: 5px;
+    height: 100px;
+    width: 100px;
+    /* padding: 10px  ; */
+}
+
+.result {
+    text-align: center;
+}
+
+.newGame {
+    width: 100%;
+}

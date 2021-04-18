@@ -8,6 +8,7 @@ import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
+import Games from './components/Games/GamesContainer'
 
 import { BrowserRouter, Route } from 'react-router-dom';
 // import CrossesZero from './CrosesZero/CrossesZero';
@@ -27,6 +28,7 @@ function App(props) {
           <Route path="/settings" component={Settings} />
           <Route path="/dialogs" render={() => <DialogsContainer/>} />
           <Route path="/profile" render={() => <Profile/>} />
+          <Route path="/games" render={() => <Games/>} />
         </div>
       </div>
 
